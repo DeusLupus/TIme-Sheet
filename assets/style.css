@@ -1,0 +1,39 @@
+.jumbotron {
+	font-family: serif;
+}
+
+
+.form-control {
+	margin-bottom: 10px;
+}
+
+.panel-default>.panel-heading {
+	background-color: lightblue;
+    color: white;
+}
+#searchButton {
+	background-color: gray;
+	color: white;
+}
+
+#clearButton {
+	background-color: gray;
+	color: white;
+
+}
+
+.container {
+	border: 2px solid black;
+}
+
+.panel.panel-default {
+	border: 2px solid black;
+}
+
+p {
+	font-weight: bold;
+}
+
+h2 {
+	text-align: center;
+}
