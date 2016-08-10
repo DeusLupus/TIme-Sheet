@@ -56,7 +56,7 @@ database.ref().on("child_added", function(childSnapshot) {
 
 	// full list of items to the well
 
- 		$('#full-member-list').append("<div class='well'><span id='name'> "+childSnapshot.val().name+" </span><span id='email'> "+childSnapshot.val().email+" </span><span id='age'> "+childSnapshot.val().age+" </span><span id='comment'> "+childSnapshot.val().comment+" </span></div>");
+ 		$('table').append("<div class='well'><span id='name'> "+childSnapshot.val().name+" </span><span id='email'> "+childSnapshot.val().email+" </span><span id='age'> "+childSnapshot.val().age+" </span><span id='comment'> "+childSnapshot.val().comment+" </span></div>");
 
 
 // // Handle the errors
@@ -71,4 +71,6 @@ database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functi
  	$("#sd").html(snapshot.val().date);
  	$("#mr").html(snapshot.val().monthRate);
  })
+
+
 
