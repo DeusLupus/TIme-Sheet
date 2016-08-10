@@ -1,10 +1,13 @@
-var config = {
-apiKey: "AIzaSyBqq0Z2UgUNdCjjBUMvgNGjikYTWtTcQcc",
-authDomain: "alphasquadtimesheet.firebaseapp.com",
-databaseURL: "https://alphasquadtimesheet.firebaseio.com",
-storageBucket: "alphasquadtimesheet.appspot.com",
-};
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBqq0Z2UgUNdCjjBUMvgNGjikYTWtTcQcc",
+    authDomain: "alphasquadtimesheet.firebaseapp.com",
+    databaseURL: "https://alphasquadtimesheet.firebaseio.com",
+    storageBucket: "alphasquadtimesheet.appspot.com",
+  };
   firebase.initializeApp(config);
+
+    
 
 var database = firebase.database();
 
@@ -14,6 +17,8 @@ var name = "";
 var role = "";
 var date = "";
 var monthRate = "";
+
+
 
 
 // Capture Button Click
@@ -29,19 +34,19 @@ $("#addButton").on("click", function() {
 
 
 	// Code for the push
-	dataRef.ref().push({
+	database.ref().push({
 		name: name,
 		role: role,
 		date: startDate,
 		monthRate: monthRate,
-		//dateAdded: firebase.database.ServerValue.TIMESTAMP
+		dateAdded: firebase.database.ServerValue.TIMESTAMP
 	});
 	// Don't refresh the page!
 	return false;
 });
 
 //Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
-dataRef.ref().on("child_added", function(childSnapshot) {
+database.ref().on("child_added", function(childSnapshot) {
 	// Log everything that's coming out of snapshot
 	 console.log(childSnapshot.val().name);
 	 console.log(childSnapshot.val().role);
@@ -56,10 +61,10 @@ dataRef.ref().on("child_added", function(childSnapshot) {
 
 // // Handle the errors
  }, function(errorObject){
-// 	//console.log("Errors handled: " + errorObject.code)
+console.log("Errors handled: " + errorObject.code)
  });
 
- dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
+database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
 // 	// Change the HTML to reflect
  	$("#emp").html(snapshot.val().name);
  	$("#roleTwo").html(snapshot.val().role);
