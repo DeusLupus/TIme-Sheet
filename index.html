@@ -8,6 +8,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 </head>
 <body>
 
@@ -24,12 +25,12 @@
           <div class="panel-body">
                   <table class="table">
               <tr>
-                <td><strong>Employee Name</strong></td>
-                <td><strong>Role</strong></td>
-                <td><strong>Star Date</strong></td>
-                <td><strong>Months Worked</strong></td>
-                <td><strong>Monthly Rate</strong></td>
-                <td><strong>Total Billed</strong></td>
+                <td id= "emp"><strong>Employee Name</strong></td>
+                <td id="roleTwo"><strong>Role</strong></td>
+                <td id="sd"><strong>Start Date</strong></td>
+                <td id="mw"><strong>Months Worked</strong></td>
+                <td id="mr"><strong>Monthly Rate</strong></td>
+                <td id="tb"><strong>Total Billed</strong></td>
               </tr>
               <tr>
                 <td>empty</td>
@@ -62,13 +63,13 @@
           <div class="panel-heading">Add Employee</div>
           <div class="panel-body">
                   <p>Employee Name</p>
-                <input id="term" type="text" class="form-control" placeholder="Employee Name">
+                <input id="name" type="text" class="form-control" placeholder="Employee Name">
                 <p>Rate</p>
-                <input id="numRecords" type="text" class="form-control" placeholder="Enter a Rate">
+                <input id="role" type="text" class="form-control" placeholder="Enter a Rate">
                 <p>Start Date (DD/MM/YY - ex: 01/01/89)</p>
-                <input id="startYear" type="text" class="form-control" placeholder="Start Date">
+                <input id="startDate" type="text" class="form-control" placeholder="Start Date">
                 <p>Monthly Rate</p>
-                <input id="endYear" type="text" class="form-control" placeholder="Monthly Rate">
+                <input id="monthRate" type="text" class="form-control" placeholder="Monthly Rate">
 
                 <button id="searchButton" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>    
                <button id="clearButton" class="btn btn-default"  type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Clear Results</button>
